@@ -11,7 +11,7 @@ def main():
 
     state, info = env.reset()
 
-    nes_ram = env.unwrapped.ram()
+    nes_ram = env.unwrapped.ram
     print("Emulater running press q to quit")
 
     for frame in range(1000):
