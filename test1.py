@@ -47,3 +47,23 @@ def main():
             header, line2, (10, 48),
             cv2.FONT_HERSHEY_SIMPLEX, 0.45, (100, 200, 255), 1, cv2.LINE_AA
         )
+
+        combined_view = np.vstack((header, frame_large))
+        cv2,imshow("SUper Mario Bros", combined_view)
+
+        if cv2.waitKey(16) & 0xFF == ord('q'):
+            print("Quitting...")
+            break
+
+        if done:
+            print(
+                f"Episode ended at Frame {frame} | Final X: {info['x_pos']} "
+                f"| Resetting savestate..."
+            )
+            state, info = env.reset()
+
+    env.close()
+    cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    main()
