@@ -49,7 +49,7 @@ def main():
         )
 
         combined_view = np.vstack((header, frame_large))
-        cv2,imshow("SUper Mario Bros", combined_view)
+        cv2.imshow("SUper Mario Bros", combined_view)
 
         if cv2.waitKey(16) & 0xFF == ord('q'):
             print("Quitting...")
